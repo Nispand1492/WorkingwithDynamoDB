@@ -108,7 +108,7 @@ conn = boto.dynamodb2.connect_to_region('us-west-2a',aws_access_key_id='AKIAIOTU
         aws_secret_access_key='Dou40Iv0zDfcdgUZ2TbIzbz2/WAz/6+eb+R73FGa')
 tb = Table('Assign5',connection=conn)
 if __name__ == '__main__':
-    run(host='0.0.0.0', port=8080, debug=True)
+    bottle.run(host='0.0.0.0', port=8080, debug=True)
 #ans = convert("nispand.csv")
 #print ans
 
