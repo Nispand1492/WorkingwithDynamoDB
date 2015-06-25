@@ -14,8 +14,8 @@ import boto
 
 fieldnames=["Lang","segment_id","contract_id","plan_id","contract_year","tier_level","tier_type_desc","sentences_sort_order","category_code"]
 
-@bottle.route('/web_interface')
-def web_interface():
+@bottle.route('/')
+def main():
     return  template('Query_page',name="hello")
 
 @bottle.route('/process_query')
@@ -107,7 +107,8 @@ def convert(filename):
 conn = boto.dynamodb2.connect_to_region('us-west-2a',aws_access_key_id='AKIAIOTUQ6KS7LIW5I6Q',
         aws_secret_access_key='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')
 tb = Table('Assign5',connection=conn)
-web_interface()
+if __name__ == '__main__':
+    run(host='0.0.0.0', port=8080, debug=True)
 #ans = convert("nispand.csv")
 #print ans
 
