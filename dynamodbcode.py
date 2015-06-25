@@ -104,8 +104,7 @@ def convert(filename):
     return "Success"
 
 
-conn = boto.dynamodb2.connect_to_region('us-west-2a',aws_access_key_id='AKIAIOTUQ6KS7LIW5I6Q',
-        aws_secret_access_key='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')
+conn = boto.dynamodb2.connect_to_region('us-west-2a')
 tb = Table('Assign5',connection=conn)
 if __name__ == '__main__':
     bottle.run(host='0.0.0.0', port=8080, debug=True)
